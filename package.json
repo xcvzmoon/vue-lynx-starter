@@ -13,7 +13,7 @@
     "lint:fix": "oxlint --fix",
     "check": "bun run fmt:check && bun run lint",
     "check:fix": "bun run fmt && bun run lint:fix",
-    "release": "bun scripts/release.ts"
+    "release": "node --experimental-strip-types scripts/release.ts"
   },
   "dependencies": {
     "valibot": "^1.4.2",
