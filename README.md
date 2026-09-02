@@ -1,27 +1,56 @@
-## Vue Lynx project
+# Vue Lynx Starter
 
-This is a Vue Lynx project bootstrapped with `create-vue-lynx`.
+[![CI](https://github.com/xcvzmoon/vue-lynx-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/xcvzmoon/vue-lynx-starter/actions/workflows/ci.yml)
+[![Release](https://github.com/xcvzmoon/vue-lynx-starter/actions/workflows/release.yml/badge.svg)](https://github.com/xcvzmoon/vue-lynx-starter/actions/workflows/release.yml)
 
-## IDE Setup
+A minimal Vue Lynx application built with Vue 3 and Rspeedy. The starter currently renders a Hello World screen in Lynx and Web environments.
 
-This project is pre-configured for [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar). VS Code will prompt you to install it automatically.
+## Requirements
 
-Volar provides prop completions, type checking, and Lynx-specific diagnostics for `.vue` files.
+- Node.js 24 or newer
+- Bun 1.4.0 or newer
+- LynxExplorer for previewing the native Lynx bundle
 
-## Getting Started
+## Getting started
 
-First, install the dependencies:
-
-```bash
-pnpm install
-```
-
-Then, run the development server:
+Install dependencies with the committed lockfile:
 
 ```bash
-pnpm run dev
+bun ci
 ```
 
-Scan the QRCode in the terminal with your LynxExplorer App to see the result.
+Start the development server:
 
-You can start editing the page by modifying `src/App.vue`. The page auto-updates as you edit the file.
+```bash
+bun run dev
+```
+
+Scan the QR code printed in the terminal with LynxExplorer. Edit [`src/App.vue`](src/App.vue) to change the screen.
+
+## Commands
+
+```bash
+bun run dev               # Start the development server
+bun run build             # Build Lynx and Web bundles
+bun run preview           # Preview the production build
+bun run check             # Check formatting and lint
+bun exec rspeedy inspect  # Inspect the Rspeedy and Rspack configuration
+```
+
+Production bundles are written to `dist/`.
+
+## Releasing
+
+Create a versioned release with one of the supported release types:
+
+```bash
+bun run release patch
+bun run release minor
+bun run release major
+```
+
+The release script updates the changelog, creates a Git commit and annotated tag, then pushes both to the repository. The Release workflow creates the corresponding GitHub release.
+
+## IDE setup
+
+The project supports [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar), including Vue and Lynx-specific diagnostics for `.vue` files.
