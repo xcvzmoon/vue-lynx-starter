@@ -10,7 +10,7 @@
     "lib": ["ESNext"],
     "target": "ESNext",
 
-    "noEmit": true,
+    "noEmit": true
   },
-  "include": ["./lynx.config.ts"],
+  "include": ["./lynx.config.ts"]
 }
