@@ -6,7 +6,13 @@
   "scripts": {
     "build": "rspeedy build",
     "dev": "rspeedy dev",
-    "preview": "rspeedy preview"
+    "preview": "rspeedy preview",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "check": "bun run fmt:check && bun run lint",
+    "check:fix": "bun run fmt && bun run lint:fix"
   },
   "dependencies": {
     "vue": "^3.5.0",
@@ -17,6 +23,9 @@
     "@lynx-js/rspeedy": "^0.14.5",
     "@rsbuild/plugin-vue": "^1.2.6",
     "@types/node": "^24.0.0",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^6.0.3"
   },
   "engines": {
