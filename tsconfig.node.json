@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "erasableSyntaxOnly": true,
+
+    "lib": ["ESNext"],
+    "target": "ESNext",
+
+    "noEmit": true,
+  },
+  "include": ["./lynx.config.ts"],
+}
